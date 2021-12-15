@@ -167,11 +167,12 @@ const Home = (props: HomeProps) => {
 
   return (
     <main>
+      <div className="mint-container">
       {wallet && (
-        <p>Wallet {shortenAddress(wallet.publicKey.toBase58() || "")}</p>
+        <p>Wallet: {shortenAddress(wallet.publicKey.toBase58() || "")}</p>
       )}
 
-      {wallet && <p>Balance: {(balance || 0).toLocaleString()} SOL</p>}
+      <p>-----------------------</p>
 
       {wallet && <p>Total Available: {itemsAvailable}</p>}
 
@@ -220,6 +221,8 @@ const Home = (props: HomeProps) => {
           {alertState.message}
         </Alert>
       </Snackbar>
+
+      </div>
     </main>
   );
 };
